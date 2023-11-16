@@ -12,8 +12,7 @@
     "mongodb": "^6.2.0",
     "mongoose": "^7.6.4",
     "react-cookie": "^6.1.1",
-    "stripe": "^14.4.0",
-    "typescript": "^5.2.2"
+    "stripe": "^14.4.0"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.1",
@@ -23,11 +22,12 @@
     "@types/jsonwebtoken": "^9.0.4",
     "@types/mongoose": "^5.11.97",
     "nodemon": "^3.0.1",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
   },
   "scripts": {
     "start": "node ./build/index.js",
     "dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node src/index.ts\"",
-    "build": "tsc-p"
+    "build": "tsc"
   }
 }
