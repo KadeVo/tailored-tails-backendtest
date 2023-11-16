@@ -14,11 +14,7 @@ const app = express()
 
 app.use(
   cors({
-    origin: (origin, callback) => {
-      const allowedOrigins = ['https://tailoredtails.onrender.com']
-      const isAllowed = allowedOrigins.includes(origin)
-      callback(null, isAllowed ? origin : false)
-    },
+    origin: '*',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 200,
