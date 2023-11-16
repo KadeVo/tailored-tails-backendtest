@@ -10,7 +10,7 @@ if (!stripeKey) {
 const stripe = new Stripe(stripeKey)
 const router = express.Router()
 
-const YOUR_DOMAIN = 'https://tailored-tails.onrender.com'
+const YOUR_DOMAIN = 'https://tailoredtails.onrender.com'
 
 router.post('/create-checkout-session', async (req, res) => {
   const line_items = req.body.cartItems.map((item: any) => {
@@ -84,8 +84,8 @@ router.post('/create-checkout-session', async (req, res) => {
     },
     line_items,
     mode: 'payment',
-    success_url: 'https://tailored-tails.onrender.com/success',
-    cancel_url: 'https://tailored-tails.onrender.com/cart',
+    success_url: 'https://tailoredtails.onrender.com/success',
+    cancel_url: 'https://tailoredtails.onrender.com/cart',
   })
   res.send({ url: session.url })
   console.log(session.url)
