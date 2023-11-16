@@ -26,7 +26,7 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "start": "node ./build/index.js",
+    "start": "node ./build/src/index.js",
     "dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node src/index.ts\"",
     "build": "tsc"
   }
