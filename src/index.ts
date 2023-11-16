@@ -28,6 +28,8 @@ app.use('/stripe', StripeRouter)
 
 app.get('/items', async (req, res) => {
   const items = await itemModel.find()
+  console.log(items)
+
   res.json(items)
 })
 
