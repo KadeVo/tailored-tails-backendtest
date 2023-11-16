@@ -46,16 +46,8 @@ const stripe_1 = require("../routes/stripe");
 dotenv.config();
 const PORT = process.env.PORT || 3000;
 const app = (0, express_1.default)();
-const allowedOrigins = ['https://tailoredtails.onrender.com'];
 app.use((0, cors_1.default)({
-    origin: function (origin, callback) {
-        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-            callback(null, true);
-        }
-        else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
+    origin: 'https://tailoredtails.onrender.com',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 200,
