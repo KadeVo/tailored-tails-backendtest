@@ -84,8 +84,8 @@ router.post('/create-checkout-session', async (req, res) => {
     },
     line_items,
     mode: 'payment',
-    success_url: `${YOUR_DOMAIN}/success`,
-    cancel_url: `${YOUR_DOMAIN}/cart`,
+    success_url: 'https://tailored-tails.onrender.com/success',
+    cancel_url: 'https://tailored-tails.onrender.com/cart',
   })
   res.send({ url: session.url })
   
