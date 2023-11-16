@@ -12,17 +12,9 @@ dotenv.config()
 const PORT = process.env.PORT || 3000
 const app = express()
 
-const allowedOrigins = ['https://tailoredtails.onrender.com']
-
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (allowedOrigins.indexOf(origin!) !== -1 || !origin) {
-        callback(null, true)
-      } else {
-        callback(new Error('Not allowed by CORS'))
-      }
-    },
+    origin: 'https://tailoredtails.onrender.com',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 200,
