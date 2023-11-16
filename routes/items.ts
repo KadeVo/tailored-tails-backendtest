@@ -28,4 +28,4 @@ router.delete('/items/:itemId', async (req, res) => {
   res.json(item)
 })
 
-export {router as ItemRouter}
+export { router as ItemRouter }
