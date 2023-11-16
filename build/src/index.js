@@ -46,9 +46,16 @@ const stripe_1 = require("../routes/stripe");
 dotenv.config();
 const PORT = process.env.PORT || 3000;
 const app = (0, express_1.default)();
-app.use(express_1.default.json());
+const allowedOrigins = ['https://tailoredtails.onrender.com'];
 app.use((0, cors_1.default)({
-    origin: 'https://tailored-tails.onrender.com',
+    origin: function (origin, callback) {
+        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+            callback(null, true);
+        }
+        else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 200,
@@ -58,6 +65,7 @@ app.use('/login', login_1.LoginRouter);
 app.use('/stripe', stripe_1.StripeRouter);
 app.get('/items', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const items = yield items_1.default.find();
+    console.log(items);
     res.json(items);
 }));
 app.get('/items/:itemId', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
